@@ -6,6 +6,7 @@
   const disabled = false
   const status = 'danger'
   const promoted = true
+  const num = 'Hi'
 </script>
 
 <main>
@@ -21,6 +22,16 @@
   <h2 class={status}>Status</h2>
   <h2 class={promoted ? 'promoted' : ''}>Movie Title</h2>
   <h2 class:promoted>Movie Title</h2>
+
+  {#if num === 0}
+    <h2>The number is zero</h2>
+  {:else if num < 0}
+    <h2>The number is negative</h2>
+  {:else if num > 0}
+    <h2>The number is positive</h2>
+  {:else}
+    <h2>Not a number</h2>
+  {/if}
 </main>
 
 <style>
