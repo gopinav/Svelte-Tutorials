@@ -1,9 +1,13 @@
 <script>
   const name = 'Vishwas'
+  const channel = '<b>Codevolution</b>'
+  const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a prize!<a/>`
 </script>
 
 <main>
   <h1>Hello {name}</h1>
+  <div>{@html channel}</div>
+  <div>{@html hack}</div>
 </main>
 
 <style>
