@@ -2,12 +2,18 @@
   const name = 'Vishwas'
   const channel = '<b>Codevolution</b>'
   const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a prize!<a/>`
+  const id = 'heading'
+  const disabled = false
 </script>
 
 <main>
   <h1>Hello {name}</h1>
+
   <div>{@html channel}</div>
   <div>{@html hack}</div>
+
+  <h2 {id}>This is a heading</h2>
+  <button {disabled}>Bind</button>
 </main>
 
 <style>
