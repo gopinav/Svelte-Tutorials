@@ -7,6 +7,12 @@
   const status = 'danger'
   const promoted = true
   const num = 'Hi'
+  const names = ['Bruce', 'Clark', 'Diana']
+  const fullNames = [
+    { first: 'Bruce', last: 'Wayne' },
+    { first: 'Clark', last: 'Kent' },
+    { first: 'Princess', last: 'Diana' }
+  ]
 </script>
 
 <main>
@@ -32,6 +38,14 @@
   {:else}
     <h2>Not a number</h2>
   {/if}
+
+  {#each names as name, index (name)}
+    <h2>{index + 1} {name}</h2>
+  {/each}
+
+  {#each fullNames as name, index (name.first)}
+    <h2>{index + 1} {name.first} {name.last}</h2>
+  {/each}
 </main>
 
 <style>
