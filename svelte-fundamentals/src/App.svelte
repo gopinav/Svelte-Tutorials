@@ -30,6 +30,10 @@
     skillSet: [],
     yearsOfExperience: ''
   }
+
+  function submitForm() {
+    console.log('form values', formValues)
+  }
 </script>
 
 <main>
@@ -73,10 +77,10 @@
     </pre>
   </div>
 
-  <form>
+  <form on:submit|preventDefault={submitForm}>
     <div>
       <label for="name">Name</label>
-      <input type="number" id="name" bind:value={formValues.name} />
+      <input type="text" id="name" bind:value={formValues.name} />
     </div>
     <div>
       <label for="profile">Profile Summary</label>
@@ -153,7 +157,7 @@
         value="6-10"
         bind:group={formValues.yearsOfExperience}
       />
-      <label for="6-10">5-10</label>
+      <label for="6-10">6-10</label>
       <input
         type="radio"
         id="10+"
@@ -161,6 +165,10 @@
         bind:group={formValues.yearsOfExperience}
       />
       <label for="10+">10+</label>
+    </div>
+
+    <div>
+      <button>Submit</button>
     </div>
   </form>
 </main>
