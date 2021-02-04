@@ -13,6 +13,13 @@
     { first: 'Clark', last: 'Kent' },
     { first: 'Princess', last: 'Diana' }
   ]
+
+  let count = 0
+
+  function handleClick(event, stepSize) {
+    console.log(event)
+    count += stepSize
+  }
 </script>
 
 <main>
@@ -46,6 +53,9 @@
   {#each fullNames as name, index (name.first)}
     <h2>{index + 1} {name.first} {name.last}</h2>
   {/each}
+
+  <button on:click={e => handleClick(e, 5)}> Count {count} </button>
+  <button on:click={e => handleClick(e, 10)}> Count {count} </button>
 </main>
 
 <style>
