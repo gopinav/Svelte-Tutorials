@@ -34,6 +34,32 @@
   function submitForm() {
     console.log('form values', formValues)
   }
+
+  let firstName = 'Bruce'
+  let lastName = 'Wayne'
+
+  $: fullName = `${firstName} ${lastName}`
+  $: console.log(`Fullname is ${firstName} ${lastName}`)
+
+  let items = [
+    {
+      id: 1,
+      title: 'TV',
+      price: 100
+    },
+    {
+      id: 2,
+      title: 'Phone',
+      price: 200
+    },
+    {
+      id: 3,
+      title: 'Laptop',
+      price: 300
+    }
+  ]
+
+  $: total = items.reduce((total, curr) => (total = total + curr.price), 0)
 </script>
 
 <main>
@@ -171,6 +197,23 @@
       <button>Submit</button>
     </div>
   </form>
+
+  <h2>{firstName} {lastName}</h2>
+  <h2>Reactive Fullname - {fullName}</h2>
+  <button
+    on:click={() => {
+      firstName = 'Clark'
+      lastName = 'Kent'
+    }}>Change Name</button
+  >
+
+  <h2>Reactive Total - {total}</h2>
+  <button
+    on:click={() =>
+      (items = [...items, { id: 4, title: 'Keyboard', price: 50 }])}
+  >
+    Add item
+  </button>
 </main>
 
 <style>
