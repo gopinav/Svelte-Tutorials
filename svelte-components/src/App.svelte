@@ -1,7 +1,22 @@
 <script>
+  import Greet from './components/Greet.svelte'
+
+  const name = 'Vishwas'
+  const channel = 'Codevolution'
+
+  const obj = {
+    name: 'Barry',
+    heroName: 'Flash'
+  }
 </script>
 
-<main />
+<main>
+  <Greet name="Bruce" heroName="Batman" />
+  <Greet name="Clark" heroName="Superman" />
+  <Greet name="Diana" heroName="Wonder Woman" />
+  <Greet {name} heroName={channel} />
+  <Greet {...obj} />
+</main>
 
 <style>
   main {
