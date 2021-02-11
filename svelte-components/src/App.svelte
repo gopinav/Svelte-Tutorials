@@ -2,6 +2,7 @@
   import { setContext } from 'svelte'
   import Greet from './components/Greet.svelte'
   import ComponentC from './components/ComponentC.svelte'
+  import Popup from './components/Popup.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -12,8 +13,14 @@
   }
 
   const userName = 'Vishwas'
-
   setContext('username-context', userName)
+
+  let showPopup = false
+
+  function closePopup(event) {
+    showPopup = false
+    console.log(event.detail)
+  }
 </script>
 
 <main>
@@ -25,6 +32,11 @@
 
   <h2>App component username - {userName}</h2>
   <ComponentC />
+
+  <button on:click={() => (showPopup = true)}>Show Popup</button>
+  {#if showPopup}
+    <Popup on:close={closePopup} />
+  {/if}
 </main>
 
 <style>
