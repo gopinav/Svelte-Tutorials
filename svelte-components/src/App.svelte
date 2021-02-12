@@ -3,6 +3,8 @@
   import Greet from './components/Greet.svelte'
   import ComponentC from './components/ComponentC.svelte'
   import Popup from './components/Popup.svelte'
+  import Outer from './components/Outer.svelte'
+  import Button from './components/Button.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -21,6 +23,10 @@
     showPopup = false
     console.log(event.detail)
   }
+
+  function handleGreet(event) {
+    alert(event.detail)
+  }
 </script>
 
 <main>
@@ -37,6 +43,9 @@
   {#if showPopup}
     <Popup on:close={closePopup} />
   {/if}
+
+  <Outer on:greet={handleGreet} />
+  <Button on:click={() => alert('Clicked')}>Click</Button>
 </main>
 
 <style>
