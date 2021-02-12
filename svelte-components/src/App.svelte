@@ -5,6 +5,7 @@
   import Popup from './components/Popup.svelte'
   import Outer from './components/Outer.svelte'
   import Button from './components/Button.svelte'
+  import Card from './components/Card.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -46,6 +47,11 @@
 
   <Outer on:greet={handleGreet} />
   <Button on:click={() => alert('Clicked')}>Click</Button>
+
+  <Card>Card Content</Card>
+  <Card><h2>Card Content</h2></Card>
+  <Card><img src="https://picsum.photos/200" alt /></Card>
+  <Card />
 </main>
 
 <style>
