@@ -48,10 +48,32 @@
   <Outer on:greet={handleGreet} />
   <Button on:click={() => alert('Clicked')}>Click</Button>
 
-  <Card>Card Content</Card>
+  <!-- <Card>Card Content</Card>
   <Card><h2>Card Content</h2></Card>
   <Card><img src="https://picsum.photos/200" alt /></Card>
-  <Card />
+  <Card /> -->
+
+  <Card>
+    <div slot="header">
+      <h3>Header</h3>
+    </div>
+    <div slot="content">
+      <img src="https://picsum.photos/200" alt />
+    </div>
+    <div slot="footer">
+      <button>View Details</button>
+    </div>
+  </Card>
+
+  <Card>
+    <div slot="header">
+      <h3>Header</h3>
+    </div>
+    <div slot="content">
+      <img src="https://picsum.photos/200" alt />
+    </div>
+
+  </Card>
 </main>
 
 <style>

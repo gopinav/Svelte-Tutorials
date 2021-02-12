@@ -1,5 +1,20 @@
+<script>
+  import { compute_slots } from 'svelte/internal'
+</script>
+
 <div class="card">
-  <slot>Default Content</slot>
+  <div id="card-header">
+    <slot name="header" />
+  </div>
+  <div id="card-content">
+    <slot name="content">Default Content</slot>
+  </div>
+  {#if $$slots.footer}
+    <hr />
+    <div id="card-footer">
+      <slot name="footer" />
+    </div>
+  {/if}
 </div>
 
 <style>
