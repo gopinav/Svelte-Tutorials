@@ -6,6 +6,7 @@
   import Outer from './components/Outer.svelte'
   import Button from './components/Button.svelte'
   import Card from './components/Card.svelte'
+  import NameList from './components/NameList.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -65,15 +66,17 @@
     </div>
   </Card>
 
-  <Card>
-    <div slot="header">
-      <h3>Header</h3>
-    </div>
-    <div slot="content">
-      <img src="https://picsum.photos/200" alt />
-    </div>
+  <NameList>
+    <h3 slot="hero" let:firstName let:lastName>{firstName} {lastName}</h3>
+  </NameList>
 
-  </Card>
+  <NameList>
+    <h3 slot="hero" let:firstName let:lastName>{lastName} {firstName}</h3>
+  </NameList>
+
+  <NameList>
+    <h3 slot="hero" let:lastName>{lastName}</h3>
+  </NameList>
 </main>
 
 <style>
