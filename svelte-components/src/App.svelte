@@ -7,6 +7,7 @@
   import Button from './components/Button.svelte'
   import Card from './components/Card.svelte'
   import NameList from './components/NameList.svelte'
+  import ChildStyles from './components/ChildStyles.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -77,6 +78,11 @@
   <NameList>
     <h3 slot="hero" let:lastName>{lastName}</h3>
   </NameList>
+
+  <h4>App Component Text</h4>
+  <ChildStyles />
+
+  <h3>App component global style</h3>
 </main>
 
 <style>
@@ -91,5 +97,9 @@
     main {
       max-width: none;
     }
+  }
+
+  h4 {
+    color: orange;
   }
 </style>
