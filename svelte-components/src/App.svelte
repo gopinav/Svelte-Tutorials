@@ -8,6 +8,7 @@
   import Card from './components/Card.svelte'
   import NameList from './components/NameList.svelte'
   import ChildStyles from './components/ChildStyles.svelte'
+  import PostList from './components/PostList.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -83,6 +84,8 @@
   <ChildStyles />
 
   <h3>App component global style</h3>
+
+  <PostList />
 </main>
 
 <style>
