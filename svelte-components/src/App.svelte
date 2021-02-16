@@ -9,6 +9,7 @@
   import NameList from './components/NameList.svelte'
   import ChildStyles from './components/ChildStyles.svelte'
   import PostList from './components/PostList.svelte'
+  import AutoFocus from './components/AutoFocus.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -85,7 +86,9 @@
 
   <h3>App component global style</h3>
 
-  <PostList />
+  <!-- <PostList /> -->
+
+  <AutoFocus />
 </main>
 
 <style>
