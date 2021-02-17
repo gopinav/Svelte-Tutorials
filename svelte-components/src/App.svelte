@@ -10,6 +10,9 @@
   import ChildStyles from './components/ChildStyles.svelte'
   import PostList from './components/PostList.svelte'
   import AutoFocus from './components/AutoFocus.svelte'
+  import TabA from './components/TabA.svelte'
+  import TabB from './components/TabB.svelte'
+  import TabC from './components/TabC.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -32,6 +35,8 @@
   function handleGreet(event) {
     alert(event.detail)
   }
+
+  let activeTab = TabA
 </script>
 
 <main>
@@ -89,6 +94,23 @@
   <!-- <PostList /> -->
 
   <AutoFocus />
+
+  <div>
+    <button on:click={() => (activeTab = TabA)}>Tab A</button>
+    <button on:click={() => (activeTab = TabB)}>Tab B</button>
+    <button on:click={() => (activeTab = TabC)}>Tab C</button>
+  </div>
+  <!-- {#if activeTab === 'TabA'}
+    <TabA />
+  {/if}
+  {#if activeTab === 'TabB'}
+    <TabB />
+  {/if}
+  {#if activeTab === 'TabC'}
+    <TabC />
+  {/if} -->
+
+  <svelte:component this={activeTab} />
 </main>
 
 <style>
