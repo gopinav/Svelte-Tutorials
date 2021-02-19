@@ -13,6 +13,7 @@
   import TabA from './components/TabA.svelte'
   import TabB from './components/TabB.svelte'
   import TabC from './components/TabC.svelte'
+  import Counter, { getTotalCount } from './components/Counter.svelte'
 
   const name = 'Vishwas'
   const channel = 'Codevolution'
@@ -111,6 +112,11 @@
   {/if} -->
 
   <svelte:component this={activeTab} />
+
+  <button on:click={() => alert(getTotalCount())}>Alert total count</button>
+  <Counter />
+  <Counter />
+  <Counter />
 </main>
 
 <style>
