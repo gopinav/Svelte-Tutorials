@@ -3,6 +3,7 @@
   import Increment from './components/Increment.svelte'
   import Decrement from './components/Decrement.svelte'
   import Reset from './components/Reset.svelte'
+  import Timer from './components/Timer.svelte'
 </script>
 
 <main>
@@ -10,6 +11,7 @@
   <Increment />
   <Decrement />
   <Reset />
+  <Timer />
 </main>
 
 <style>
